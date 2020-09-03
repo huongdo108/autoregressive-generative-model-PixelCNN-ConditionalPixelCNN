@@ -33,7 +33,9 @@ The conditional distribution <img src="https://render.githubusercontent.com/rend
 
 - The layer can have two kinds of binary masks:
   1. with zero in the center (`blind_center=True`):
+
   <img src="https://github.com/huongdo108/autoregressive-generative-model-PixelCNN-ConditionalPixelCNN/blob/master/images/masked_conv.png" align="centre">
+
   2. with one in the center (`blind_center=False`):
 
   <img src="https://github.com/huongdo108/autoregressive-generative-model-PixelCNN-ConditionalPixelCNN/blob/master/images/masked_conv_2.png" align="centre">
@@ -52,7 +54,7 @@ When the network is used in the `eval()` model, the required causality structure
 
 **Loss function for training PixelCNN**
 
-In PixelCNN, the conditional distributions $p(x_i|x_1,...,x_{i-1})$ of pixel intensities $x_i$ are multinomial distributions over 256 possible values. Thus, the loss function is the mean of the cross-entropy classification losses with 256 classes computed for each pixel $x_i$.
+In PixelCNN, the conditional distributions <img src="https://render.githubusercontent.com/render/math?math=p(x_i|x_1,...,x_{i-1})"> of pixel intensities <img src="https://render.githubusercontent.com/render/math?math=x_i"> are multinomial distributions over 256 possible values. Thus, the loss function is the mean of the cross-entropy classification losses with 256 classes computed for each pixel <img src="https://render.githubusercontent.com/render/math?math=x_i">.
 
 **Generation procedure**
 
@@ -97,3 +99,7 @@ Similar to PixelCNN.
 The `generate()` function is *almost* identical to the `generate()` function from the PixelCNN. It additionally receives the labels of the desired classes so that they can be used in the forward computations of the conditional PixelCNN model.
 
 **Result**
+
+ <img src="https://github.com/huongdo108/autoregressive-generative-model-PixelCNN-ConditionalPixelCNN/blob/master/images/cond_pixelcnn_result.png" align="centre">
+
+ <img src="https://github.com/huongdo108/autoregressive-generative-model-PixelCNN-ConditionalPixelCNN/blob/master/images/cond_pixelcnn_result2.png" align="centre">
